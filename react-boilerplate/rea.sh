@@ -10,3 +10,22 @@ if [ -z "$project_name" ]; then
   echo "Error: Project name cannot be empty."
   exit 1
 fi
+
+# Create root project dir by the provided name and move inside
+mkdir $project_name 
+cd $project_name
+
+# create frontend and backend directories
+npm create vite@latest "$project_name-frontend" -- --template react-ts
+
+mkdir "$project_name-backend" 
+cd "$project_name-backend" 
+touch BACKEND.md
+
+cd ..
+
+# Create DB folder
+mkdir "$project_name-db" 
+cd "$project_name-db" 
+touch DB.md
+
