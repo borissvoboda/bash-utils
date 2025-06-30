@@ -29,3 +29,7 @@ mkdir "$project_name-db"
 cd "$project_name-db" 
 touch DB.md
 
+cd ..
+cd ..
+
+sqlite3 "$project_name/$project_name-db/$project_name.db" < dbschema.sql
